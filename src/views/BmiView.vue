@@ -29,9 +29,11 @@ function calBmi() {
       <button @click="calBmi">คำนวณ</button>
     </div>
 
-    <div>
-      <div>BMI</div>
-      <div>{{ result }}</div>
+    <div class="result-border">
+      <div class="center">BMI</div>
+      <div class="center" style="font-size: 25pt">
+        {{ result === Infinity ? 0 : result.toFixed(2) }}
+      </div>
     </div>
 
     <table>
@@ -246,6 +248,9 @@ function calBmi() {
 </template>
 
 <style scoped>
+.center {
+  text-align: center;
+}
 .focus-color {
   background-color: rgb(254, 205, 165);
 }
@@ -279,5 +284,17 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+
+.result-border {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+th,
+td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 </style>
