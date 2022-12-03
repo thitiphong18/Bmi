@@ -39,27 +39,27 @@ function calBmi() {
       <th>อยู่ในเกณท์</th>
       <th>ภาวะเสี่ยงต่อโรค</th>
     </tr>
-    <tr>
+    <tr :class="{ 'focus-color': result < 18.5 }">
       <td>น้อยกว่า 18.50</td>
       <td>น้ำหนักน้อย / ผอม</td>
       <td>มากกว่าคนปกติ</td>
     </tr>
-    <tr>
+    <tr :class="{ 'focus-color': result >= 18.5 && result < 22.9 }">
       <td>ระหว่าง 18.50 - 22.90</td>
       <td>น้ำหนักน้อย / ผอม</td>
       <td>เท่าคนปกติ</td>
     </tr>
-    <tr>
+    <tr :class="{ 'focus-color': result >= 23 && result < 24.9 }">
       <td>ระหว่าง 23 - 24.90</td>
       <td>ท้วม / โรคอ้วนระดับ 1</td>
       <td>อันตรายระดับ 1</td>
     </tr>
-    <tr>
+    <tr :class="{ 'focus-color': result >= 25 && result < 29.9 }">
       <td>ระหว่าง 25 - 29.90</td>
       <td>อ้วน / โรคอ้วนระดับ 2</td>
       <td>อันตรายระดับ 2</td>
     </tr>
-    <tr>
+    <tr :class="{ 'focus-color': result >= 30 }">
       <td>มากกว่า 30</td>
       <td>อ้วนมาก / โรคอ้วนระดับ 3</td>
       <td>อันตรายระดับ 3</td>
@@ -239,4 +239,8 @@ function calBmi() {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.focus-color {
+  background-color: rgb(254, 205, 165);
+}
+</style>
